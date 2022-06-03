@@ -13,7 +13,16 @@ const Home: NextPage = () => {
             pode <strong>adotar</strong> um pet virtualmente.
           </span>
         } />
-      <ListContent />
+      <ListContent
+        pets={[
+          {
+            id: 1,
+            name: 'Pedro',
+            description: 'lorem impsumsalk jfldaflasdfljasdlfj lkaflasdfljasdfljsdl jsdfjsdlafjasdljflasjflsdajflasdffdasfasdlorem impsumsalk jfldaflasdfljasdlfj lkaflasdfljasdfljsdl jsdfjsdlafjasdljflasjflsdajflasdffdasfaslorem impsumsalk jfldaflasdfljasdlfj lkaflasdfljasdfljsdl jsdfjsdlafjasdljflasjflsdajflasdffdasfaslorem impsumsalk jfldaflasdfljasdlfj lkaflasdfljasdfljsdl jsdfjsdlafjasdljflasjflsdajflasdffdasfaslorem impsumsalk jfldaflasdfljasdlfj lkaflasdfljasdfljsdl jsdfjsdlafjasdljflasjflsdajflasdffdasfas fasdfasdf',
+            picture: 'https://www.altoastral.com.br/media/uploads/legacy/2016/06/bidu-na-vida-real.jpg'
+          }
+        ]}
+      />
     </div>
   )
 }

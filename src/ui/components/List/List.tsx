@@ -7,20 +7,31 @@ import {
     NameStyled,
     DescriptionStyled
 } from "./List.style";
+import { Pet } from '../../../data/@types/Pet';
+interface ListProps {
+    pets: Pet[];
+}
+import { TextService } from "../../../data/services/TextService";
 
-export default function ListContent() {
+export default function ListContent(props: ListProps) {
+    const maxLength = 200;
     return (
         <ListStyled>
-            <ItemListStyled>
-                <PictureStyled />
-                <AllTextStyled>
-                    <NameStyled>Bidu</NameStyled>
-                    <DescriptionStyled>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eius rerum perferendis, nihil quos modi excepturi? Facere, expedita quod, explicabo quis omnis dolorum fuga repudiandae dolores incidunt ea sequi quos.
-                    </DescriptionStyled>
-                    <Button variant={'contained'}>Adotar</Button>
-                </AllTextStyled>
-            </ItemListStyled>
+            {props.pets.map((pet) => (
+                <ItemListStyled key={pet.id}>
+                    <PictureStyled src={pet.picture} alt={pet.name} />
+                    <AllTextStyled>
+                        <NameStyled >{pet.name}</NameStyled>
+                        <DescriptionStyled>
+                            {TextService.limitText(pet.description, maxLength)}
+                        </DescriptionStyled>
+                        <Button
+                            variant={'contained'}
+                            fullWidth>Adotar {pet.name}
+                        </Button>
+                    </AllTextStyled>
+                </ItemListStyled>
+            ))}
         </ListStyled>
     );
 }
