@@ -2,7 +2,7 @@
 
 First:
 ```
-npx create-next-app pets --ts
+npx create-next-app projectName --ts
 ```
 
 Second, run the development server:
