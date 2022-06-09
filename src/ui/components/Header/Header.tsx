@@ -1,9 +1,15 @@
 import { ContainerHeader, Logo } from "./Header.style";
+import { Link } from '@mui/material';
+import NextLink from 'next/link';
 
-export default function HeaderMain(){
-    return(
+export default function HeaderMain() {
+    return (
         <ContainerHeader>
-            <Logo src="/imgs/logo.svg" alt="adote pet"/>
+            <Link component={NextLink} href={'/'}>
+                <a>
+                    <Logo src={'/imgs/logo.svg'} alt={'adote pet'} />
+                </a>
+            </Link>
         </ContainerHeader>
     )
 }
